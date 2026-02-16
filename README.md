@@ -26,5 +26,5 @@ Executor de arquivos .anery:  Console: baixe o arquivo executor-anery.js > abra 
 Está em fase bem inicial, revisão 0.5, podem ter as seguintes coisas a seguir:
 1)Coisas faltando
 2)BUGS, BUgs e... bugs
-Caso queira relatar bugs ou dar sugestões:
-* E-mail: ferfernando345256@gmail.com *
+Caso queira relatar bugs ou dar sugestões
+-E-mail: ferfernando345256@gmail.com-
