@@ -9,6 +9,6 @@ Como dito acima, Anery é focado principalmente para quem quer aprender lógica/
 O interpretador do Anery fica no site (Anery.rf.gd), hospedado pelo infinityfree então espere avisos de falta de certificados
 
 ## Documentação
-A documentação sobre a linguagem está no arquivo Documentação.txt
+A documentação sobre a linguagem está no arquivo Documentação-Rev5.txt
 
 
