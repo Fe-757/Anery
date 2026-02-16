@@ -11,11 +11,11 @@ O interpretador do Anery fica no site (Anery.rf.gd), hospedado pelo infinityfree
 ## Documentação
 A documentação sobre a linguagem está no arquivo Documentação-Rev5.txt
 
-##Como testar
+## Como testar
 1) Você precisa ter instalado o Node.js na sua maquina
 2) Escolha se qual interpretador irá usar, console ou executor de arquivos
 
-##Console
+## Console
  Console: baixe o arquivo anery-console.js > abra a pasta no powershell no windows ou o console na sua distro Linux > rode node anery-console.js > agora você pode testar códigos Anery direto pelo console
 
 ##Arquivo
