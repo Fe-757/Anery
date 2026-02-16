@@ -5,9 +5,6 @@ Está em fase bem inicial, pretendo expandir bem mais essa linguagem
 ## Descrição
 Como dito acima, Anery é focado principalmente para quem quer aprender lógica/programação de forma simples, totalmente em português e com lógica simples.
 
-## Como executar
-O interpretador do Anery fica no site (Anery.rf.gd), hospedado pelo infinityfree então espere avisos de falta de certificados
-
 ## Documentação
 A documentação sobre a linguagem está no arquivo Documentação-Rev5.txt
 
@@ -22,6 +19,8 @@ A documentação sobre a linguagem está no arquivo Documentação-Rev5.txt
 
 Executor de arquivos .anery:  Console: baixe o arquivo executor-anery.js > abra a pasta no powershell no windows ou o console na sua distro Linux > crie um arquivo de texto com o código e salve como .anery > rode node executor-anery.js Nome-do-seu-arquivo.anery > pronto
 
+## console online
+Por enquanto o console online é oque tem menos bugs Anery.rf.gd
 ## Detalhes
 Está em fase bem inicial, revisão 0.5, podem ter as seguintes coisas a seguir:
 1)Coisas faltando
