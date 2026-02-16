@@ -1,0 +1,45 @@
+anery v1 documentação
+
+operadores:
+
+- subtração
++ adição
+= resultado
+/ divisão
+* multiplicação
+% porcentagem
+< menor valor
+> maior valor
+
+condicionais:
+
+se 
+mesmo
+troca
+
+loop:
+
+loop por 
+enquanto
+loop inf
+
+lógica e sintaxes:
+
+[] - cria funções
+{} - representa valores
+# - comentários 
+. - diz oque deve fazer 
+calc - calcular valor numérico
+env - enviar valor
+rec - receber valor
+res - resultado
+console.env - exibir no console
+
+exemplo:
+
+[calc {8}+{4}.res
+console.env {res}]
+
+exemplo:
+console.env {olá mundo!}
+
