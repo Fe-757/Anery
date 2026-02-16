@@ -22,4 +22,9 @@ A documentação sobre a linguagem está no arquivo Documentação-Rev5.txt
 
 Executor de arquivos .anery:  Console: baixe o arquivo executor-anery.js > abra a pasta no powershell no windows ou o console na sua distro Linux > crie um arquivo de texto com o código e salve como .anery > rode node executor-anery.js Nome-do-seu-arquivo.anery > pronto
 
-
+## Detalhes
+Está em fase bem inicial, revisão 0.5, podem ter as seguintes coisas a seguir:
+1)Coisas faltando
+2)BUGS, BUgs e... bugs
+Caso queira relatar bugs ou dar sugestões:
+* E-mail: ferfernando345256@gmail.com *
