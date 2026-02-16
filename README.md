@@ -18,7 +18,7 @@ A documentação sobre a linguagem está no arquivo Documentação-Rev5.txt
 ## Console
  Console: baixe o arquivo anery-console.js > abra a pasta no powershell no windows ou o console na sua distro Linux > rode node anery-console.js > agora você pode testar códigos Anery direto pelo console
 
-##Arquivo
+## Arquivo
 
 Executor de arquivos .anery:  Console: baixe o arquivo executor-anery.js > abra a pasta no powershell no windows ou o console na sua distro Linux > crie um arquivo de texto com o código e salve como .anery > rode node executor-anery.js Nome-do-seu-arquivo.anery > pronto
 
