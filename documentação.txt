@@ -1,10 +1,11 @@
-anery v1 documentação
+anery documentação
 
+Em desenvolvimento, revisão 0.5
 operadores:
 
 - subtração
 + adição
-= resultado
+= valor da operação 
 / divisão
 * multiplicação
 % porcentagem
@@ -13,9 +14,9 @@ operadores:
 
 condicionais:
 
-se 
-mesmo
-troca
+se - 
+mesmo -
+troca -
 
 loop:
 
@@ -25,21 +26,81 @@ loop inf
 
 lógica e sintaxes:
 
-[] - cria funções
+[] - criar blocos para organizar funções grandes (ou funções pequenas, tanto faz)
 {} - representa valores
 # - comentários 
-. - diz oque deve fazer 
+. - diz oque fazer em seguida
+() - variáveis 
+^ - inserir texto dentro de valor numérico sem interferir
 calc - calcular valor numérico
 env - enviar valor
 rec - receber valor
 res - resultado
 console.env - exibir no console
+tempo - define um timer para executar (em segundos)
+apos - diz oque fazer após executar algo
+cont - contar tempo em segundos
+entrada - permitido inserir valor 
+digitar - indica quando é permitido inserir um valor no console
+gerar - gerar valor numérico ou palavras aleatoriamente ou numero máximo definido
+num - gerar numero
+texto - gerar texto 
 
-exemplo:
+Exemplos de lógica:
+
+executar calculo e exibir resultado no console:
+
 
 [calc {8}+{4}.res
-console.env {res}]
+console.env (res)]
 
-exemplo:
+exibir "olá mundo":
+
 console.env {olá mundo!}
 
+executar calculo após 5 segundos:
+
+[tempo {5}.calc {5}*{7}.res
+console.env (res)]
+
+cacular maior valor após calculo:
+
+[calc {9}+{7}.res
+calc.(res)>{15} #15 é o valor de comparação
+se (res)>{15}.console.env {O valor é maior que 15}]
+
+uso de variáveis 1:
+
+#primeiro vem o nome da variável e o valor entre chaves
+(nome {Fernando})
+console.env (nome)
+
+uso de variáveis 2:
+
+#exemplo com valor para cálculos numéricos 
+[console.env {Insira números para somar}
+#variaveis (num1 {entrada}). (num2 {entrada})
+calc (num1) + (num2) = res 
+apos console.env {^O resultado é^ (res)}]
+
+gerar valores:
+
+texto:
+
+[gerar.texto {aleatorio} = res
+console.env {^A palavra gerada é:^ (res)}]
+
+#gerar palavras de 5 letras
+
+[gerar.texto {5} = res
+console.env {^A palavra gerada é:^ (res)}]
+
+numérico:
+
+[gerar.num {aleatorio} = res
+console.env {^O numero gerado é:^ (res)}]
+
+#até 8 números
+
+[gerar.texto {8} = res
+console.env {^O numero gerado é:^ (res)}]
