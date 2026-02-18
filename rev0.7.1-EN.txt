@@ -1,0 +1,191 @@
+anery documentation
+
+In development, revision 0.7.1
+
+
+operators:
+
+- subtraction
++ addition
+= operation value
+/ division
+* multiplication
+% percentage
+< lesser value
+> greater value
+
+conditionals:
+
+if
+else if
+change
+
+loop:
+
+loop while
+while
+loop
+loop for
+
+logic and syntax:
+
+[] - create blocks to organize large functions (or small functions, it doesn't matter)
+{} - represents values
+# - comments
+. - indicates what to do next
+() - variables
+^ - insert text inside a numeric value without interference
+$ - creates functions, the function name is now outside the brackets, it's no longer mandatory to write function before, just put $ and the function name
+
+calc - calculate numerical value
+env - send value or response
+rec - receive value or response
+res - result
+console.env - display in console
+time - sets a timer to run (in seconds)
+after - specifies what to do after executing something
+cont - count time in seconds
+entrance - allowed to enter value
+type - indicates when it is allowed to enter a value in the console
+generate - generate numerical value or words randomly or a set maximum number
+num - generate number
+text - generate text
+random - random value
+
+Creating simple servers:
+
+port - defines the port
+directory - defines which folder inside the root contains media and the index.html to serve
+api - creates a custom API for the server (or server routes)
+index - defines which initial page the server should serve
+record - save data to a file, e.g., JSON or ADDA
+read - read data from a file
+search - search in a file or database
+return - return result
+data - defines the fields that should be created in an adda file
+captcha - native support for captcha generation
+gen-token - native token generator
+cripto - encrypt
+save-token - save login token in the browser
+redi - redirect to
+ver - enforce strict data verification
+val - valid/true
+fal - false
+ret - return response/notice
+
+Examples:
+
+simple server to serve home.html:
+
+port {3000}
+directory {public} #Folder name
+index {home.html} #If empty, default is index.html
+console.env {The server is running on port 3000!}
+
+page for downloading a file:
+
+port {3001}
+directory {public}
+index {download.html}
+#returns response to the frontend with the file download
+
+$download [
+api.rec {https://download.com/download/exemplary-file.txt}
+after
+api.env {exemplary-file.txt}]
+
+console.env {Server running on port 3001}
+
+server to write in adda:
+
+port {3002}
+directory {formulario} #Folder name
+index {form.html}
+
+data {name, age, city, evaluation}
+
+$form-data[
+api.rec {https://my-form.com/data}
+after
+write {answers.adda} #file name to save
+after
+ret {Your response was successfully saved!}]
+
+console.env {The server is running on port 3002}
+
+account creation and login route server:
+
+port {3003}
+directory {sites} #Folder name
+index {create.html}
+
+data {name, username, birthdate, password}
+
+$create-account [ 
+api.rec {http://localhost:3003/create-account} #frontend sends the data and saves after recording
+{accounts.add} #name of the file to save after return {Your account has been successfully created}]
+
+$login [ 
+api.rec {http://localhost:3003/login}.verify #receives the data and enforces strict verification if valid api.env {http://localhost:3003/login} #returns valid response if fail ret {Incorrect data}] #does not authorize login 
+console.env {The server is running on port 3003}
+
+
+Logic examples:
+
+perform calculation and display result on the console:
+
+#you can also use brackets if you want to separate and organize some part of the code
+
+calc 8 + 4.res
+console.env (res)
+
+display hello world!:
+
+console.env {hello world!}
+
+perform calculation after 5 seconds:
+
+time 5.calc 5*7.res
+console.env (res)
+
+calculate greatest value after calculation:
+
+calc 9+7.res
+if (res)>{15}
+console.env {^The value is greater than^ 15}
+
+use of variables 1:
+
+#first comes the variable name and the value in braces
+(name {Fernando})
+console.env (name)
+
+use of variables 2:
+
+#example with value for numeric calculations
+console.env {Enter numbers to sum}
+#variables (num1 {input}). (num2 {input})
+calc (num1) + (num2) = res
+after console.env {^The result is^ (res)}
+
+generate values:
+
+text:
+
+generate.text {random} = res
+console.env {^The generated word is:^ (res)}
+
+#generate 5-letter words
+
+generate.text {5} = res
+console.env {^The generated word is:^ (res)}
+
+numeric:
+
+generate.num {random} = res
+console.env {^The generated number is:^ (res)}
+
+#up to 8 numbers
+
+generate.num {8} = res
+console.env {^The generated number is:^ (res)}
