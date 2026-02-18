@@ -8,23 +8,17 @@ Como dito acima, Anery é focado principalmente para quem quer aprender lógica/
 ## Documentação
 A documentação sobre a linguagem está no arquivo Documentação-Rev5.txt
 
-## Como testar
-1) Você precisa ter instalado o Node.js na sua maquina
-2) Escolha se qual interpretador irá usar, console ou executor de arquivos
+## Como rodar
+1)Baixe o motor 
+2)Crie um arquivo com seu código anery e salve como .anery ou .an
+3)Abra o executavel
+4)Digite o nome do arquivo e ele será executado
 
-## Console
- Console: baixe o arquivo anery-console.js > abra a pasta no powershell no windows ou o console na sua distro Linux > rode node anery-console.js > agora você pode testar códigos Anery direto pelo console
-
-## Arquivo
-
-Executor de arquivos .anery:  Console: baixe o arquivo executor-anery.js > abra a pasta no powershell no windows ou o console na sua distro Linux > crie um arquivo de texto com o código e salve como .anery > rode node executor-anery.js Nome-do-seu-arquivo.anery > pronto
-
-## console online
-Por enquanto o console online é oque tem menos bugs Anery.rf.gd
 ## Detalhes
-Está em fase bem inicial, revisão 0.5, podem ter as seguintes coisas a seguir:
+Está em fase bem inicial, revisão 0.7.1, podem ter as seguintes coisas a seguir:
 1)Coisas faltando
 2)BUGS, BUgs e... bugs
+3)O motor do anery foi feito com node.js, futuramente será portado para C
 Caso queira relatar bugs ou dar sugestões
 
 *E-mail: ferfernando345256@gmail.com*
