@@ -2,6 +2,7 @@ anery documentação
 
 Em desenvolvimento, revisão 0.7.1
 #melhorias em relação a servidor
+#USO DE CHAVES NÃO É MAIS OBRIGADO PARA CALCULOS
 
 operadores:
 
@@ -198,3 +199,4 @@ console.env {^O numero gerado é:^ (res)}]
 
 [gerar.num {8} = res
 console.env {^O numero gerado é:^ (res)}]
+
