@@ -1,6 +1,8 @@
 anery documentação
 
-Em desenvolvimento, revisão 0.5
+Em desenvolvimento, revisão 0.7.1
+#melhorias em relação a servidor
+
 operadores:
 
 - subtração
@@ -15,7 +17,7 @@ operadores:
 condicionais:
 
 se - 
-mesmo -
+mesmo - igual senão
 troca -
 
 loop:
@@ -32,9 +34,10 @@ lógica e sintaxes:
 . - diz oque fazer em seguida
 () - variáveis 
 ^ - inserir texto dentro de valor numérico sem interferir
+$ - cria funções, o nome da função agora fica fora dos colchetes, não é mais obrigatório escrever funcao antes, apenas colocar $ e nome da função 
 calc - calcular valor numérico
-env - enviar valor
-rec - receber valor
+env - enviar valor ou resposta
+rec - receber valor ou resposta
 res - resultado
 console.env - exibir no console
 tempo - define um timer para executar (em segundos)
@@ -46,15 +49,106 @@ gerar - gerar valor numérico ou palavras aleatoriamente ou numero máximo defin
 num - gerar numero
 texto - gerar texto 
 
+Criação de servidores simples:
+
+porta - define a porta 
+diretório - define qual pasta dentro da raiz contém mídias e o index.html para servir
+api - cria uma api personalizada para o servidor (ou rotas de servidor)
+index - define qual a pagina inicial que o servidor deve servir
+gravar - gravar dados em arquivo, ex: JSON ou ADDA
+ler - ler dados em um arquivo
+buscar - buscar em um arquivo ou banco de dados
+retornar - retornar resultado
+dados - define os campos que devem ser criados em um arquivo adda
+captcha - suporte nativo a geração de captcha
+gen-token - gerador nativo de token
+cripto - criptografar
+sal-token - salvar token de login no navegador
+redi - redirecionar para 
+ver - forçar verificação rígida de dados
+val - valido/verdadeiro
+fal - falso
+ret - retornar resposta/aviso, env não é mais usado para retornar avisos
+
+Exemplos:
+
+servidor simples para servir home.html:
+
+porta {3000}
+diretorio {public} #Nome da pasta
+index {home.html} #Caso vazio, o padrão é index.html
+console.env {O servidor está rodando na porta 3000!}
+
+pagina para download de um arquivo:
+
+porta {3001}
+diretorio {public}
+index {download.html} 
+#retorna resposta para o frontend com o download do arquivo
+
+$download [
+api.rec {https://download.com/download/arquivo-exemplo.txt}
+apos
+api.env {arquivo-exemplo.txt}]
+
+console.env {Servidor rodando na porta 3001}
+
+
+servidor para gravar em adda:
+
+porta {3002}
+diretorio {formulario} #Nome da pasta
+index {formulario.html} 
+
+dados {nome, idade, cidade, avaliacao}
+
+$dados-formulario[
+api.rec {https://meu-formulario.com/dados}
+apos 
+gravar {respostas.adda} #nome do arquivo para gravar
+apos
+ret {Sua resposta foi salva com sucesso!}]
+
+console.env {O servidor está rodando na porta 3002}
+
+
+servidor de criação de conta e rota de login:
+
+porta {3003}
+diretorio {sites} #Nome da pasta
+index {criar.html} 
+
+dados {nome, nome de usuário, nascimento, senha}
+
+$criar-conta [
+api.rec {http://localhost:3003/criar-conta} #frontend envia os dados e salva
+apos 
+gravar {contas.adda} #nome do arquivo para gravar
+apos
+ret {Sua conta foi criada com sucesso}]
+
+$login [
+api.rec {http://localhost:3003/login}.ver #recebe os dados e força verificação rigorosa
+se val
+api.env {http://localhost:3003/login} #retorna resposta valida 
+se fal
+ret {Dados incorretos}] #não autoriza login
+
+
+console.env {O servidor está rodando na porta 3003}
+
+
+
 Exemplos de lógica:
 
 executar calculo e exibir resultado no console:
 
+#também pode usar colchetes para caso queira separar e organizar alguma parte do código 
 
 [calc {8}+{4}.res
 console.env (res)]
 
-exibir "olá mundo":
+exibir olá mundo!:
 
 console.env {olá mundo!}
 
@@ -67,7 +161,7 @@ cacular maior valor após calculo:
 
 [calc {9}+{7}.res
 calc.(res)>{15} #15 é o valor de comparação
-se (res)>{15}.console.env {O valor é maior que 15}]
+se (res)>{15}.console.env {^O valor é maior que^ 15}]
 
 uso de variáveis 1:
 
@@ -102,5 +196,5 @@ console.env {^O numero gerado é:^ (res)}]
 
 #até 8 números
 
-[gerar.texto {8} = res
+[gerar.num {8} = res
 console.env {^O numero gerado é:^ (res)}]
